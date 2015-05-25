@@ -1,0 +1,39 @@
+{
+	  "name": "店侦探&看店宝-淘宝卖家数据分析工具",
+	  "manifest_version": 2,
+      "version":"1.0.0.1",
+	  "description": "淘宝卖家数据分析工具，店铺经营数据和宝贝销售分析，店铺流量来源、活动推广等等。",
+	  "permissions": ["cookies", "contextMenus", "tabs", "*://*/*"],
+	  "icons": {
+	    "48" : "dzt_ext_logo48x48.png",
+	    "128" : "dzt_ext_logo128x128.png"
+	  },
+      "background": {
+          "scripts": [ "background.js" ]
+      },
+      "browser_action": {
+        "default_icon": "dzt_ext_logo48x48.png",
+        "default_title": "店侦探&看店宝-电商数据分析专家",
+        "default_popup": "popup.html"
+      },
+      "update_url": "http://www.dianzhentan.com/upext",
+	  "content_scripts": [
+	    {
+	      "matches": ["http://s.taobao.com/*",
+            "http://list.tmall.com/search_product.htm*",
+            "http://list.taobao.com/itemlist*",
+            "http://item.taobao.com/item.htm*",
+            "http://detail.tmall.com/item.htm*",
+            "http://detail.yao.95095.com/item.htm*",
+            "http://chi.taobao.com/itemlist/*",
+            "http://item.tiaoshi.taobao.com/item.htm*",
+            "http://tejia.taobao.com/tejiaListRec.htm*",
+            "http://g.taobao.com/brand_detail.htm*",
+            "http://detail.tmall.hk/hk/item.htm*",
+            "http://list.tmall.hk/search_product.htm*",
+            "http://items.alitrip.com/item.htm*",
+            "http://chaoshi.detail.tmall.com/item.htm*"],
+	      "js" : ["jquery-1.11.2.min.js","contentscript.js", "echarts-all.js"]
+	    }
+	  ]
+}
